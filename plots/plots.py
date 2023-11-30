@@ -5,10 +5,10 @@ import os
 import sys
 import numpy as np
 
-buildcuda = '/home/mdessole/Projects/ROOT/genvectorxfork/build_cuda/'
-buildoneapi = '/home/mdessole/Projects/ROOT/genvectorxfork/build_oneapi/'
-buildacpp = '/home/mdessole/Projects/ROOT/genvectorxfork/build_adaptivecpp/'
-path = '/home/mdessole/Projects/ROOT/genvectorxfork/plots/'
+buildcuda = '/data/mdessole/genvectorxfork/build_cuda/'
+buildoneapi = '/data/mdessole/genvectorxfork/build_oneapi/'
+buildacpp = '/data/mdessole/genvectorxfork/build_adaptivecpp/'
+path = '/data/mdessole/genvectorxfork/plots/'
 
 def result2list(exe, N, nruns):
     print(exe, str(int(N)), str(int(nruns)))
@@ -64,8 +64,8 @@ def run_benchmark(builddir, sizes, nruns = 1, testname = "InvariantMasses", btyp
 def collect_results(testname, platform, nruns):
     nruns = int(nruns)
 
-    sizes = array('d',[1000, 10000, 100000,1000000,5000000,10000000, 50000000,100000000]) #10,100,1000,10000,100000,
-    Ssizes = array('d',[1000, 10000, 100000,1000000,5000000,10000000, 50000000,100000000,200000000]) #10,100,1000,10000,100000,
+    sizes = array('d',[1000, 10000, 100000,1000000,5000000,10000000, 50000000, 100000000, 200000000, 400000000]) #10,100,1000,10000,100000,
+    Ssizes = array('d',[1000, 10000, 100000,1000000,5000000,10000000, 50000000,100000000, 200000000, 400000000, 800000000 ]) #10,100,1000,10000,100000,
 
     val = list(sizes)
     sizes_gb = [v*8*4/1e9 for v in val] #(nb of doubles)*(bytes for doubles)*(4=dim of LVector)/(bytes in GB)
