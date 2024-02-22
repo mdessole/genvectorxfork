@@ -7,5 +7,17 @@ build*
 # ipynb_checkpoints
 plots/.ipynb_checkpoints
 
+# timing results
+plots/*.npz
+
+# nsys results
+plots/20*
+
 # nsys report
 nsysreport
+
+# doc
+doc
+
+# test
+test
